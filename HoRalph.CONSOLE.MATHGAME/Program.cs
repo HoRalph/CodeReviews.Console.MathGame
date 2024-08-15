@@ -84,7 +84,7 @@ while(exit)
     if (result != "P")
     {
     Console.WriteLine($"{question}: ");
-    bool parseCheck = int.TryParse(Console.ReadLine(), out int guess);
+    int.TryParse(Console.ReadLine(), out int guess);
     UpdateHistory(answer, guess);
     if (guess == answer)
         Console.WriteLine("Correct!");
