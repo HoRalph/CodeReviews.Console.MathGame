@@ -1,10 +1,8 @@
-﻿﻿// See https://aka.ms/new-console-template for more information
-
+﻿﻿
 bool exit =  true;
 Random random = new Random();
 int answer =0;
 int gameNumber = 0;
-string[,]history= new string[10,4];
 string question = "";
 
 List <string> historyList = new List<string>();
@@ -72,11 +70,6 @@ while(exit)
         case "P":
         for (int i = 0; i < gameNumber; i++)
         {
-           /* Console.WriteLine($"Game Number: {history[i,0]}");
-            Console.WriteLine($"Question: {history[i,1]}");
-            Console.WriteLine($"Answer: {history[i,2]}");
-            Console.WriteLine($"Guess: {history[i,3]}");
-            Console.WriteLine();*/
             Console.WriteLine(historyList[i]);
             Console.WriteLine();
         }
@@ -107,11 +100,5 @@ Console.ReadLine();
 
 void UpdateHistory(int answer, int guess)
 {
-    
-    /*history[gameNumber-1,0] = gameNumber.ToString(); 
-    history[gameNumber-1,1] = question;
-    history[gameNumber-1,2] = answer.ToString();
-    history[gameNumber-1,3] = guess.ToString();*/
-
     historyList.Add($"Question #{gameNumber.ToString()} is {question}. Your Guess was {guess.ToString()}. The Correct Answer was {answer.ToString()}");
 }
